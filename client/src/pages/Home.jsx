@@ -37,26 +37,49 @@ const MenuCard = ({ title, image, link }) => (
       transition="transform 0.2s"
       _hover={{ transform: 'scale(1.02)' }}
       position="relative"
+      h="200px"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
     >
       <Box
-        bgGradient="linear(to-r, yellow.400, blue.500)"
+        position="absolute"
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
+        bgImage={`url(${image})`}
+        bgSize="cover"
+        bgPosition="center"
+        opacity={0.8}
+      />
+      <Box
         position="absolute"
         top={0}
         right={0}
         px={3}
         py={1}
+        bg="yellow.400"
+        color="gray.800"
         borderBottomLeftRadius="lg"
+        fontWeight="bold"
+        fontSize="sm"
       >
-        <Text color="white" fontWeight="bold">
-          คลิกที่นี่
-        </Text>
+        คลิกที่นี่
       </Box>
-      <VStack p={4} align="center" spacing={3}>
-        <Image src={image} alt={title} h="60px" objectFit="contain" />
+      <Box
+        position="absolute"
+        bottom={0}
+        left={0}
+        right={0}
+        p={4}
+        bg="rgba(0, 0, 0, 0.7)"
+        textAlign="center"
+      >
         <Text color="white" fontSize="xl" fontWeight="bold">
           {title}
         </Text>
-      </VStack>
+      </Box>
     </Box>
   </Link>
 );
